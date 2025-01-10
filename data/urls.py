@@ -1,0 +1,13 @@
+VOYAGE_PAGE = 'https://localhost:8719/#/voyage/'
+HISTORY_PAGE = 'https://localhost:8719/#/history/'
+FUEL_PAGE = 'https://localhost:8719/#/fuel-management/'
+ERRORS_PAGE = 'https://localhost:8719/#/dashboard/'
+
+SETTINGS_PAGE = 'https://localhost:8719/#/settings/'
+SETTINGS_MASTERDATA_PAGE = 'https://localhost:8719/#/settings/masterdata'
+SETTINGS_VOYAGE_PAGE = 'https://localhost:8719/#/settings/voyage-settings'
+SETTINGS_FUEL_PAGE = 'https://localhost:8719/#/settings/initial-fuel-rob'
+SETTINGS_HULL_PAGE = 'https://localhost:8719/#/settings/hull-maintenance'
+SETTINGS_BACKUP_PAGE = 'https://localhost:8719/#/settings/reports-restore'
+SETTINGS_TIPS_PAGE = 'https://localhost:8719/#/settings/tips'
+SETTINGS_ABOUT_PAGE = 'https://localhost:8719/#/settings/about'
