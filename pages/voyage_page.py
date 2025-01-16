@@ -13,7 +13,7 @@ class VoyagePage(BasePage):
 
     def click_enable_all_toggle(self):
         self.wait_element_in_dom(TOGGLE_ENABLE_ALL)
-        self.click_element_toggle(TOGGLE_ENABLE_ALL)
+        self.click_element_toggle_on(TOGGLE_ENABLE_ALL)
 
     # def get_toggle_attributes(self):
     #     print(self.get_element_attributes(TOGGLE_ENABLE_ALL))

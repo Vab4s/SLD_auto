@@ -2,8 +2,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.action_chains import ActionChains
 
-from selenium.webdriver.common.action_chains import ActionChains
-
 from locators.base_locators import *
 
 
@@ -29,7 +27,7 @@ class BasePage:
         self.wait.until(expected_conditions.visibility_of_element_located(element))
         self.wait.until(expected_conditions.element_to_be_clickable(element)).click()
 
-    def click_element_toggle(self, element_toggle):
+    def click_element_toggle_on(self, element_toggle):
         if 'anchor-toggle--checked' not in self.driver.find_element(*element_toggle).get_attribute('class'):
             self.click_element(element_toggle)
 
@@ -57,8 +55,11 @@ class BasePage:
     def get_element_parameter_equality(self, element, element_attribute, supposed_attribute):
         return supposed_attribute in self.driver.find_element(*element).get_attribute(element_attribute)
 
+    # def get_element_text_equality(self, element, supposed_text):
+    #     return supposed_text in self.driver.find_element(*element).text
+
     def get_element_text_equality(self, element, supposed_text):
-        return supposed_text in self.driver.find_element(*element).text
+        return supposed_text == self.driver.find_element(*element).text
 
     def get_elements_text_equality(self, element_one, element_two):
         return self.driver.find_element(*element_one).text == self.driver.find_element(*element_two).text

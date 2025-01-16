@@ -1,3 +1,6 @@
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions
+
 import time
 import pytest
 
@@ -28,7 +31,10 @@ class TestSectionsDependencyOnMasterData:
         [
             ['lpg_tanker',  # vessel_type Выбор типа судна
              MAIN_ENGINE_POWER_TYPE_SHAFT_SUBMENU,  # engine_power_type Выбор типа основного двигателя
-             [('propellers', 1), ('main-engines', 1), ('auxiliary-engines', 2), ('boilers', 1), ('other-larger-consumers', 1)],
+             [('propellers', 1), ('main-engines', 1), ('diesel-generators', 1), ('auxiliary-engines', 3),
+              ('exhaust-gas-boilers', 1), ('gas-turbines', 1), ('gas-combustion-units', 1), ('boilers', 1),
+              ('compressors-(cargo-care-usage)', 1), ('other-larger-consumers', 1),
+              ('other-safety/emergency-consumers', 1), ('scrubbers', 1)],
              [('ME', 1), ('AE', 2), ('AB', 1), ('AC', 1)], # report_equipment Проверка оборудование в репорте]
              [(GAS_COMBUSTION_UNITS, 1)],
              [('ME', 1), ('AE', 2), ('AB', 1), ('AC', 1), ('GCU', 2)]
@@ -74,3 +80,55 @@ class TestSectionsDependencyOnMasterData:
         voyage_page.click_departure_report()
         voyage_page.voyage_report_equipment_assertion(report_equipment_after_add_new_equipment)
         clear_timeline(driver)
+
+    @pytest.mark.parametrize(
+        'vessel_type, engine_power_type, avalable_equipment, report_equipment, equipment_to_add, report_equipment_after_add_new_equipment',
+        [
+            ['lpg_tanker',  # vessel_type Выбор типа судна
+             MAIN_ENGINE_POWER_TYPE_DIESEL_SUBMENU,  # engine_power_type Выбор типа основного двигателя
+             [('propellers', 1), ('main-engines', 2), ('auxiliary-engines', 2), ('boilers', 1),
+              ('other-larger-consumers', 1)],
+             [('ME', 1), ('AE', 2), ('AB', 1), ('AC', 1)],  # report_equipment Проверка оборудование в репорте]
+             [(GAS_COMBUSTION_UNITS, 1)],
+             [('ME', 1), ('AE', 2), ('AB', 1), ('AC', 1), ('GCU', 2)]
+             ]
+        ]
+    )
+    def all_available_equipment_which_are_added_in_md_are_shown_in_reports(self):
+        pass
+
+    def test_elements__0(self, driver):
+        masterdata_page = MasterdataPage(driver)
+        masterdata_page.go_to_masterdata_page()
+        elements = driver.find_elements('xpath', '//*[contains(@class, "--mandatory")]')
+        print()
+        for element in elements:
+            if element.get_attribute('placeholder') is not None:
+                if element.tag_name == 'button':
+                    pass
+                    # Нажать на кнопку и выбрать какой-либо элемент
+                else:
+                    print(element.tag_name, element.get_attribute('qa-id'), element.get_attribute('placeholder'))
+            else:
+                if element.tag_name == 'anchor-date-picker':
+                    print(element.tag_name, element.get_attribute('qa-id'), element.get_attribute('min'))
+                else:
+                    alt_element = element.find_element('xpath', './/*[@placeholder]')
+                    print(alt_element.tag_name, alt_element.get_attribute('qa-id'), alt_element.get_attribute('placeholder'))
+            #
+            # if element.tag_name != 'div':
+            #     print(element.tag_name, str(element.get_attribute('placeholder')).split('-'))
+            # else:
+            #     print('>>> ', element.find_element('xpath', './/anchor-input').get_attribute('placeholder'))
+
+    def test_elements__1(self, driver):
+        masterdata_page = MasterdataPage(driver)
+        masterdata_page.go_to_masterdata_page()
+        elements = driver.find_elements('xpath', '//*[contains(@class, "--mandatory")]')
+        # elements2 = driver.find_elements('xpath', "//*[contains(concat(' ', normalize-space(@class), ' '), ' event-list__button ')]")
+        print()
+        for element in elements:
+            if element.tag_name != 'div':
+                print(element.tag_name, str(element.get_attribute('placeholder')).split('-'))
+            else:
+                print(element.tag_name, element.find_element('xpath', './/anchor-input').get_attribute('placeholder'))
