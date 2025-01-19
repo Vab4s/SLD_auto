@@ -4,16 +4,16 @@ from selenium.webdriver.support import expected_conditions
 import time
 import pytest
 
-from helpers.clear_timeline import clear_timeline
-from helpers.close_all_notifications import close_all_notifications
+from functions.clear_timeline import clear_timeline
+from functions.close_all_notifications import close_all_notifications
 
-from helpers.fill_consumption_time import fill_consumption_time
-from helpers.fill_consumption import fill_consumption
-from helpers.fill_regular_fields import fill_regular_fields
-from helpers.fill_dropdown_menu import fill_dropdown_menu
-from helpers.fill_position import fill_position
-from helpers.fill_date_time import fill_date_time
-from helpers.fill_all_mandatory_fields import fill_all_mandatory_fields
+from functions.fill_consumption_time import fill_consumption_time
+from functions.fill_consumption import fill_consumption
+from functions.fill_regular_fields import fill_regular_fields
+from functions.fill_dropdown_menu import fill_dropdown_menu
+from functions.fill_position import fill_position
+from functions.fill_date_time import fill_date_time
+from functions.fill_all_mandatory_fields import fill_all_mandatory_fields
 
 from pages.voyage_page import VoyagePage
 from pages.masterdata_page import MasterdataPage

@@ -1,7 +1,7 @@
 import random
 import time
 
-from helpers.random_date import random_date
+from functions.random_date import random_date
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.remote.errorhandler import StaleElementReferenceException
 

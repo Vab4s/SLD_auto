@@ -3,7 +3,7 @@ from selenium.common import TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
-from helpers.close_all_notifications import close_all_notifications
+from functions.close_all_notifications import close_all_notifications
 
 from locators.base_locators import *
 from locators.voyage_timeline_locators import *

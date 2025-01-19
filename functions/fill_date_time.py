@@ -1,5 +1,5 @@
 from random import randint
-from helpers.random_date import random_date
+from functions.random_date import random_date
 from selenium.webdriver.common.keys import Keys
 
 from selenium.webdriver.common.action_chains import ActionChains

@@ -25,7 +25,7 @@ class BasePage:
         self.wait.until(expected_conditions.presence_of_element_located(element))
 
     def click_element(self, element):
-        self.wait.until(expected_conditions.visibility_of_element_located(element))
+        # self.wait.until(expected_conditions.visibility_of_element_located(element))
         self.wait.until(expected_conditions.element_to_be_clickable(element)).click()
 
     def click_element_toggle_on(self, element_toggle):

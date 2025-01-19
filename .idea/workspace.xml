@@ -4,19 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8de1f2b3-e31a-4e86-8090-d0c75eafc237" name="Changes" comment="SLD autotests commit #3">
-      <change afterPath="$PROJECT_DIR$/helpers/fill_consumption.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/fill_consumption_time.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/fill_date_time.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/fill_dropdown_menu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/fill_position.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/fill_regular_fields.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/fill_all_mandatory_fields.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/fill_all_mandatory_fields.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locators/voyage_sidebar_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/locators/voyage_sidebar_locators.py" afterDir="false" />
+    <list default="true" id="8de1f2b3-e31a-4e86-8090-d0c75eafc237" name="Changes" comment="SLD autotests commit #4">
       <change beforePath="$PROJECT_DIR$/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/voyage_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/voyage_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_smartLog_testreport_departure_report_AT.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_smartLog_testreport_departure_report_AT.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,18 +114,18 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for fill_all_mandatory_fields.test_fill_all_mandatory_fields" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for functions.fill_all_mandatory_fields" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="sld_auto" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/helpers" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/functions" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;fill_all_mandatory_fields.test_fill_all_mandatory_fields&quot;" />
+      <option name="_new_target" value="&quot;functions.fill_all_mandatory_fields&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -173,7 +162,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Python tests for test_smartLog_testreport_departure_report_AT.TestSectionsDependencyOnMasterData.test_fillinf" />
-        <item itemvalue="Python tests.Python tests for fill_all_mandatory_fields.test_fill_all_mandatory_fields" />
+        <item itemvalue="Python tests.Python tests for functions.fill_all_mandatory_fields" />
         <item itemvalue="Python.fill_all_mandatory_fields" />
         <item itemvalue="Python.mouse_mover" />
         <item itemvalue="Python tests.Python tests in test_smartLog_testreport_departure_report_AT.py" />
@@ -220,14 +209,23 @@
       <option name="project" value="LOCAL" />
       <updated>1737025215811</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="SLD autotests commit #4">
+      <option name="closed" value="true" />
+      <created>1737247066655</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1737247066656</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="SLD autotests commit #1" />
     <MESSAGE value="SLD autotests commit #2" />
     <MESSAGE value="SLD autotests commit #3" />
-    <option name="LAST_COMMIT_MESSAGE" value="SLD autotests commit #3" />
+    <MESSAGE value="SLD autotests commit #4" />
+    <option name="LAST_COMMIT_MESSAGE" value="SLD autotests commit #4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
