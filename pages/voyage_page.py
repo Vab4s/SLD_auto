@@ -1,9 +1,13 @@
+import time
+
 from pages.base_page import BasePage
 from data.urls import VOYAGE_PAGE
 from locators.base_locators import *
 from locators.voyage_sidebar_locators import *
 from locators.voyage_timeline_locators import *
 from locators.modal_window_locators import *
+
+from selenium.webdriver.common.keys import Keys
 
 
 class VoyagePage(BasePage):
@@ -17,6 +21,26 @@ class VoyagePage(BasePage):
 
     # def get_toggle_attributes(self):
     #     print(self.get_element_attributes(TOGGLE_ENABLE_ALL))
+
+    # def fill_current_voyage(self):
+    #     self.click_element(BUTTON_EDIT)
+    #     self.send_text_to_element(INPUT_VOYAGE_DRAFT_NUMBER_PARAMETER, '1')
+    #     self.action.click(MENU_VOYAGE_DRAFT_DIRECTION_STAGE_PARAMETER).click(MENU_DIRECTION_STAGE_ELEMENTS).perform()
+    #     self.send_text_to_element(INPUT_VOYAGE_DRAFT_NAME_PARAMETER, '1')
+    #     self.click_save_button()
+
+    def fill_current_voyage(self):
+        self.click_element(BUTTON_EDIT)
+
+        self.click_element(INPUT_VOYAGE_DRAFT_NUMBER_PARAMETER)
+        self.driver.find_element(*INPUT_VOYAGE_DRAFT_NUMBER_PARAMETER).send_keys('1')
+
+        self.click_element(MENU_VOYAGE_DRAFT_DIRECTION_STAGE_PARAMETER)
+        self.click_element(MENU_DIRECTION_STAGE_ELEMENTS)
+
+        self.click_element(INPUT_VOYAGE_DRAFT_NAME_PARAMETER)
+        self.driver.find_element(*INPUT_VOYAGE_DRAFT_NAME_PARAMETER).send_keys('1')
+        self.click_save_button()
 
     def create_voyage_event_report(self, element_event_report, supposed_text):
         self.click_element(element_event_report)

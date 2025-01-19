@@ -6,10 +6,22 @@ import pytest
 
 from helpers.clear_timeline import clear_timeline
 from helpers.close_all_notifications import close_all_notifications
-from pages.voyage_page import VoyagePage
 
-from locators.masterdata_locators import *
+from helpers.fill_consumption_time import fill_consumption_time
+from helpers.fill_consumption import fill_consumption
+from helpers.fill_regular_fields import fill_regular_fields
+from helpers.fill_dropdown_menu import fill_dropdown_menu
+from helpers.fill_position import fill_position
+from helpers.fill_date_time import fill_date_time
+from helpers.fill_all_mandatory_fields import fill_all_mandatory_fields
+
+from pages.voyage_page import VoyagePage
 from pages.masterdata_page import MasterdataPage
+
+from locators.voyage_timeline_locators import *
+from locators.masterdata_locators import *
+from locators.base_locators import *
+
 
 
 class TestCreateFirstDepartureEvent:
@@ -132,3 +144,25 @@ class TestSectionsDependencyOnMasterData:
                 print(element.tag_name, str(element.get_attribute('placeholder')).split('-'))
             else:
                 print(element.tag_name, element.find_element('xpath', './/anchor-input').get_attribute('placeholder'))
+
+    def test_fillinf(self, driver):
+        voyage_page = VoyagePage(driver)
+        voyage_page.go_to_voyage_page()
+        clear_timeline(driver)
+        voyage_page.create_departure()
+        voyage_page.fill_current_voyage()
+        voyage_page.click_element(TIMELINE_REPORT)
+        voyage_page.wait_element_loading(('xpath', '//div[contains(@qa-id, "report-form")]'))
+        # masterdata_page = MasterdataPage(driver)
+        # masterdata_page.go_to_masterdata_page()
+        # fill_all_mandatory_fields(driver)
+
+        fill_regular_fields(driver)
+        fill_dropdown_menu(driver)
+        fill_position(driver)
+        fill_date_time(driver)
+        fill_consumption(driver)
+        fill_consumption_time(driver)
+
+        voyage_page.click_element(BUTTON_SAVE_MENU_ITEM)
+        voyage_page.click_element(BUTTON_SEND)

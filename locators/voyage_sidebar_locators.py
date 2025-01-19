@@ -1,3 +1,5 @@
+import random
+
 ELEMENT_SIDEBAR = ('xpath', '//div[@class="voyage-sidebar"]')
 
 BUTTON_EDIT = ('xpath', '//anchor-button[@qa-id="btn-edit"]')
@@ -10,8 +12,11 @@ INPUT_VOYAGE_DRAFT_NUMBER_PARAMETER = ('xpath', '//anchor-input[@qa-id="Voyage n
 
 # Поле с названием "Direction/Stage"
 LABEL_VOYAGE_DRAFT_DIRECTION_FIELD = ('xpath', '//label[text()="Direction/Stage"]')
-# Поле с параметром
-MENU_VOYAGE_DRAFT_DIRECTION_PARAMETER = ('xpath', '//button[@qa-id="Direction/Stage"]')
+# Меню "Direction stage". Поле с параметром
+MENU_VOYAGE_DRAFT_DIRECTION_STAGE_PARAMETER = ('xpath', '//button[@qa-id="Direction/Stage"]')
+# Элементы меню
+MENU_DIRECTION_STAGE_ELEMENTS = ('xpath', f'(//div[@qa-id="voyage-sidebar"]//anchor-menu-item)[{random.randint(0, 4)}]')
+
 
 # Поле с названием "Voyage name"
 LABEL_VOYAGE_DRAFT_NAME_FIELD = ('xpath', '//label[text()="Voyage name"]')
