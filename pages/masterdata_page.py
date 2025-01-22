@@ -1,11 +1,20 @@
+import time
+
 from pages.base_page import BasePage
 from data.urls import SETTINGS_MASTERDATA_PAGE
 from locators.base_locators import *
-from locators.voyage_sidebar_locators import *
+from locators.voyage_menu_locators import *
 from locators.masterdata_locators import *
 from locators.modal_window_locators import *
 
 from selenium.common import NoSuchElementException
+
+from functions.fill_regular_fields import fill_regular_fields
+from functions.fill_dropdown_menu import fill_dropdown_menu
+from functions.fill_position import fill_position
+from functions.fill_date_time import fill_date_time
+from functions.fill_consumption import fill_consumption
+from functions.fill_consumption_time import fill_consumption_time
 
 
 class MasterdataPage(BasePage):
@@ -45,3 +54,18 @@ class MasterdataPage(BasePage):
             equipment_locator = self.format_locator_with_one_parameter(ADD_ITEM_BUTTON, equipment)
             for i in range(number):
                 self.click_element(equipment_locator)
+
+    def click_save_button(self):
+        self.click_element(BUTTON_SAVE)
+
+
+    def fill_all_mandatory_fields(self):
+        fill_regular_fields(self.driver)
+        # fill_dropdown_menu(self.driver)
+        # fill_position(self.driver)
+        # fill_date_time(self.driver)
+        # time.sleep(10)
+        # fill_consumption(self.driver)
+        # fill_consumption_time(self.driver)
+        # self.click_element(BUTTON_SAVE)
+        # self.click_element(BUTTON_SEND)

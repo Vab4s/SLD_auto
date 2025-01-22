@@ -6,6 +6,8 @@ from selenium.webdriver.common.keys import Keys
 
 from selenium.webdriver.common.action_chains import ActionChains
 
+from functions.fill_consumption_time import fill_consumption_time
+
 def fill_consumption(driver):
     equipment_fuel_lots = driver.find_elements('xpath', '//div[contains(@qa-id, "Bunkering lot name") and contains(@class, "mandatory")]')
     time_since_last_report = driver.find_element('xpath', '//anchor-duration-input[@qa-id="Time since last rep."]')
@@ -45,6 +47,8 @@ def fill_consumption(driver):
             # ввести в поле float-значение в промежутке между верхней и нижней границей
             random_number = round(random.uniform(element_placeholder_min, element_placeholder_max), 1)
             consumption.send_keys(random_number)
+
+    fill_consumption_time(driver)
 
     # Почему-то не отрабаьывает этот кусок кода
     # Перенёс в отдельный файл

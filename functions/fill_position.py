@@ -11,6 +11,6 @@ def fill_position(driver):
     '''
     position_elements = driver.find_elements('xpath', '//anchor-coordinate-input[contains(@qa-id, "Position")]')
     for element in position_elements:
-        ActionChains(driver).scroll_to_element(element).click(element).perform()
-        ActionChains(driver).scroll_to_element(element).click(element).send_keys('111').perform()
+        driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+        ActionChains(driver).click(element).send_keys('111').perform()
 

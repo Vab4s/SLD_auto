@@ -11,3 +11,5 @@ TIMELINE_EVENT_DATE = ('xpath', '//div[contains(@qa-id, "timeline-event")]//div[
 
 TIMELINE_REPORT_TIME = ('xpath', '//div[contains(@qa-id, "timeline-report")]//div[@qa-id="timeline-time"]')
 TIMELINE_EVENT_TIME = ('xpath', '//div[contains(@qa-id, "timeline-event")]//div[@qa-id="timeline-time"]')
+
+TIMELINE_DEPARTURE_REPORT = ('xpath', '//div[text()="{}"]//ancestor::div[contains(@qa-id, "timeline-report")]')

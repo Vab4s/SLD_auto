@@ -4,8 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8de1f2b3-e31a-4e86-8090-d0c75eafc237" name="Changes" comment="SLD autotests commit #4">
+    <list default="true" id="8de1f2b3-e31a-4e86-8090-d0c75eafc237" name="Changes" comment="SLD autotests commit #4.1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/fill_consumption.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/fill_consumption.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/fill_consumption_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/fill_consumption_time.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/fill_date_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/fill_date_time.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/fill_dropdown_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/fill_dropdown_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/fill_position.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/fill_position.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/fill_regular_fields.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/fill_regular_fields.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locators/voyage_sidebar_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/locators/voyage_menu_locators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locators/voyage_timeline_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/locators/voyage_timeline_locators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/masterdata_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/masterdata_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/voyage_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/voyage_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_smartLog_testreport_departure_report_AT.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_smartLog_testreport_departure_report_AT.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +40,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/functions/fill_regular_fields.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -48,6 +65,7 @@
     &quot;Python tests.Python tests for test_smartLog_testreport_departure_report_AT.TestSectionsDependencyOnMasterData.test_elements_2.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_smartLog_testreport_departure_report_AT.TestSectionsDependencyOnMasterData.test_elements__0.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_smartLog_testreport_departure_report_AT.TestSectionsDependencyOnMasterData.test_fillinf.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_smartLog_testreport_departure_report_AT.TestSectionsDependencyOnMasterData.test_tips.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_voyage_page.TestCreateFirstDepartureEvent.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_voyage_page.TestCreateFirstDepartureEvent.test_close_notifications.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_voyage_page.TestCreateFirstDepartureEvent.test_create_first_departure_report.executor&quot;: &quot;Run&quot;,
@@ -70,50 +88,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python tests.Python tests for test_smartLog_testreport_departure_report_AT.TestSectionsDependencyOnMasterData.test_fillinf">
-    <configuration name="fill_all_mandatory_fields" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="sld_auto" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/helpers" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/helpers/fill_all_mandatory_fields.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="mouse_mover" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="sld_auto" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/helpers" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/helpers/mouse_mover.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Python tests for functions.fill_all_mandatory_fields" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="sld_auto" />
       <option name="ENV_FILES" value="" />
@@ -129,6 +103,21 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for test_smartLog_testreport_departure_report_AT.TestCreateFirstDepartureEvent.test_create_first_departure_report" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="sld_auto" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_smartLog_testreport_departure_report_AT.TestCreateFirstDepartureEvent.test_create_first_departure_report&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for test_smartLog_testreport_departure_report_AT.TestSectionsDependencyOnMasterData.test_fillinf" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="sld_auto" />
       <option name="ENV_FILES" value="" />
@@ -141,6 +130,21 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_smartLog_testreport_departure_report_AT.TestSectionsDependencyOnMasterData.test_fillinf&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_smartLog_testreport_departure_report_AT.TestSectionsDependencyOnMasterData.test_tips" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="sld_auto" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_smartLog_testreport_departure_report_AT.TestSectionsDependencyOnMasterData.test_tips&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -162,10 +166,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Python tests for test_smartLog_testreport_departure_report_AT.TestSectionsDependencyOnMasterData.test_fillinf" />
-        <item itemvalue="Python tests.Python tests for functions.fill_all_mandatory_fields" />
-        <item itemvalue="Python.fill_all_mandatory_fields" />
-        <item itemvalue="Python.mouse_mover" />
+        <item itemvalue="Python tests.Python tests for test_smartLog_testreport_departure_report_AT.TestSectionsDependencyOnMasterData.test_tips" />
+        <item itemvalue="Python tests.Python tests for test_smartLog_testreport_departure_report_AT.TestCreateFirstDepartureEvent.test_create_first_departure_report" />
         <item itemvalue="Python tests.Python tests in test_smartLog_testreport_departure_report_AT.py" />
+        <item itemvalue="Python tests.Python tests for functions.fill_all_mandatory_fields" />
       </list>
     </recent_temporary>
   </component>
@@ -217,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737247066656</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="SLD autotests commit #4.1">
+      <option name="closed" value="true" />
+      <created>1737249406503</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1737249406503</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -225,27 +237,7 @@
     <MESSAGE value="SLD autotests commit #2" />
     <MESSAGE value="SLD autotests commit #3" />
     <MESSAGE value="SLD autotests commit #4" />
-    <option name="LAST_COMMIT_MESSAGE" value="SLD autotests commit #4" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tests/test_smartLog_testreport_departure_report_AT.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pages/base_page.py</url>
-          <line>86</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pages/base_page.py</url>
-          <line>87</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="SLD autotests commit #4.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="SLD autotests commit #4.1" />
   </component>
 </project>

@@ -11,3 +11,5 @@ SETTINGS_HULL_PAGE = 'https://localhost:8719/#/settings/hull-maintenance'
 SETTINGS_BACKUP_PAGE = 'https://localhost:8719/#/settings/reports-restore'
 SETTINGS_TIPS_PAGE = 'https://localhost:8719/#/settings/tips'
 SETTINGS_ABOUT_PAGE = 'https://localhost:8719/#/settings/about'
+
+INIT_PAGE = 'https://localhost:8719/#/init'

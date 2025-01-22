@@ -10,13 +10,14 @@ from functions.close_all_notifications import close_all_notifications
 from functions.fill_consumption_time import fill_consumption_time
 from functions.fill_consumption import fill_consumption
 from functions.fill_regular_fields import fill_regular_fields
-from functions.fill_dropdown_menu import fill_dropdown_menu
+from functions.fill_dropdown_menu import *
 from functions.fill_position import fill_position
 from functions.fill_date_time import fill_date_time
 from functions.fill_all_mandatory_fields import fill_all_mandatory_fields
 
 from pages.voyage_page import VoyagePage
 from pages.masterdata_page import MasterdataPage
+from pages.init_page import InitPage
 
 from locators.voyage_timeline_locators import *
 from locators.masterdata_locators import *
@@ -109,42 +110,6 @@ class TestSectionsDependencyOnMasterData:
     def all_available_equipment_which_are_added_in_md_are_shown_in_reports(self):
         pass
 
-    def test_elements__0(self, driver):
-        masterdata_page = MasterdataPage(driver)
-        masterdata_page.go_to_masterdata_page()
-        elements = driver.find_elements('xpath', '//*[contains(@class, "--mandatory")]')
-        print()
-        for element in elements:
-            if element.get_attribute('placeholder') is not None:
-                if element.tag_name == 'button':
-                    pass
-                    # Нажать на кнопку и выбрать какой-либо элемент
-                else:
-                    print(element.tag_name, element.get_attribute('qa-id'), element.get_attribute('placeholder'))
-            else:
-                if element.tag_name == 'anchor-date-picker':
-                    print(element.tag_name, element.get_attribute('qa-id'), element.get_attribute('min'))
-                else:
-                    alt_element = element.find_element('xpath', './/*[@placeholder]')
-                    print(alt_element.tag_name, alt_element.get_attribute('qa-id'), alt_element.get_attribute('placeholder'))
-            #
-            # if element.tag_name != 'div':
-            #     print(element.tag_name, str(element.get_attribute('placeholder')).split('-'))
-            # else:
-            #     print('>>> ', element.find_element('xpath', './/anchor-input').get_attribute('placeholder'))
-
-    def test_elements__1(self, driver):
-        masterdata_page = MasterdataPage(driver)
-        masterdata_page.go_to_masterdata_page()
-        elements = driver.find_elements('xpath', '//*[contains(@class, "--mandatory")]')
-        # elements2 = driver.find_elements('xpath', "//*[contains(concat(' ', normalize-space(@class), ' '), ' event-list__button ')]")
-        print()
-        for element in elements:
-            if element.tag_name != 'div':
-                print(element.tag_name, str(element.get_attribute('placeholder')).split('-'))
-            else:
-                print(element.tag_name, element.find_element('xpath', './/anchor-input').get_attribute('placeholder'))
-
     def test_fillinf(self, driver):
         voyage_page = VoyagePage(driver)
         voyage_page.go_to_voyage_page()
@@ -152,17 +117,33 @@ class TestSectionsDependencyOnMasterData:
         voyage_page.create_departure()
         voyage_page.fill_current_voyage()
         voyage_page.click_element(TIMELINE_REPORT)
-        voyage_page.wait_element_loading(('xpath', '//div[contains(@qa-id, "report-form")]'))
+        voyage_page.fill_all_mandatory_fields()
+        # voyage_page.wait_element_loading(('xpath', '//div[contains(@qa-id, "report-form")]'))
+
         # masterdata_page = MasterdataPage(driver)
         # masterdata_page.go_to_masterdata_page()
         # fill_all_mandatory_fields(driver)
+        # masterdata_page.fill_all_mandatory_fields()
 
-        fill_regular_fields(driver)
-        fill_dropdown_menu(driver)
-        fill_position(driver)
-        fill_date_time(driver)
-        fill_consumption(driver)
-        fill_consumption_time(driver)
+        # fill_regular_fields(driver)
+        # fill_dropdown_menu(driver)
+        # fill_position(driver)
+        # fill_date_time(driver)
+        # fill_consumption(driver)
+        # fill_consumption_time(driver)
 
-        voyage_page.click_element(BUTTON_SAVE_MENU_ITEM)
-        voyage_page.click_element(BUTTON_SEND)
+        # voyage_page.click_element(BUTTON_SAVE_MENU_ITEM)
+        # voyage_page.click_element(BUTTON_SEND)
+        time.sleep(10)
+
+    def test_tips(self, driver):
+        init_page = InitPage(driver)
+        init_page.go_to_init_page()
+        init_page.flip_all_tips()
+        init_page.initialization_guide_step()
+        init_page.initialization_backup_step()
+        init_page.initialization_voyage_settings_step()
+        init_page.fill_all_mandatory_fields_MD()
+        init_page.fill_all_mandatory_fields_ROB()
+        init_page.initialization_finish_step()
+        time.sleep(5)

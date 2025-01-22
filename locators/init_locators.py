@@ -1,0 +1,1 @@
+TIPS_IMG = ('xpath', '//img[@class="tip-image"]')

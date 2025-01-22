@@ -6,22 +6,24 @@ BUTTON_EDIT = ('xpath', '//anchor-button[@qa-id="btn-edit"]')
 
 # Voyage report form
 # Поле с названием "Voyage number"
-LABEL_VOYAGE_DRAFT_NUMBER_FIELD = ('xpath', '//label[text()="Voyage number"]')
+VOYAGE_DRAFT_VOYAGE_NUMBER_LABEL = ('xpath', '//label[text()="Voyage number"]')
 # Поле с параметром
-INPUT_VOYAGE_DRAFT_NUMBER_PARAMETER = ('xpath', '//anchor-input[@qa-id="Voyage number"]')
+VOYAGE_DRAFT_VOYAGE_NUMBER_INPUT = ('xpath', '//anchor-input[@qa-id="Voyage number"]')
 
 # Поле с названием "Direction/Stage"
-LABEL_VOYAGE_DRAFT_DIRECTION_FIELD = ('xpath', '//label[text()="Direction/Stage"]')
+VOYAGE_DRAFT_DIRECTION_STAGE_LABEL = ('xpath', '//label[text()="Direction/Stage"]')
 # Меню "Direction stage". Поле с параметром
-MENU_VOYAGE_DRAFT_DIRECTION_STAGE_PARAMETER = ('xpath', '//button[@qa-id="Direction/Stage"]')
+VOYAGE_DRAFT_DIRECTION_STAGE_DROPMENU = ('xpath', '//button[@qa-id="Direction/Stage"]')
 # Элементы меню
-MENU_DIRECTION_STAGE_ELEMENTS = ('xpath', f'(//div[@qa-id="voyage-sidebar"]//anchor-menu-item)[{random.randint(0, 4)}]')
+VOYAGE_DRAFT_DIRECTION_STAGE_DROPMENU_ITEM = ('xpath', f'(//div[@qa-id="voyage-sidebar"]//anchor-menu-item)[{random.randint(0, 4)}]')
 
 
 # Поле с названием "Voyage name"
-LABEL_VOYAGE_DRAFT_NAME_FIELD = ('xpath', '//label[text()="Voyage name"]')
+VOYAGE_DRAFT_VOYAGE_NAME_LABEL = ('xpath', '//label[text()="Voyage name"]')
 # Поле с параметром
-INPUT_VOYAGE_DRAFT_NAME_PARAMETER = ('xpath', '//anchor-input[@qa-id="Voyage name"]')
+VOYAGE_DRAFT_VOYAGE_NAME_INPUT = ('xpath', '//anchor-input[@qa-id="Voyage name"]')
+
+BUTTON_VOYAGE_DRAFT_BACK = ('xpath', '//anchor-button[@qa-id="btn-back"]')
 
 
 # Поле с названием "Name"

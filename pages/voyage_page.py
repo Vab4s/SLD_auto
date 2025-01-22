@@ -2,12 +2,18 @@ import time
 
 from pages.base_page import BasePage
 from data.urls import VOYAGE_PAGE
+
 from locators.base_locators import *
-from locators.voyage_sidebar_locators import *
+from locators.voyage_menu_locators import *
 from locators.voyage_timeline_locators import *
 from locators.modal_window_locators import *
 
-from selenium.webdriver.common.keys import Keys
+from functions.fill_regular_fields import fill_regular_fields
+from functions.fill_dropdown_menu import fill_dropdown_menu
+from functions.fill_position import fill_position
+from functions.fill_date_time import fill_date_time
+from functions.fill_consumption import fill_consumption
+from functions.fill_consumption_time import fill_consumption_time
 
 
 class VoyagePage(BasePage):
@@ -15,32 +21,17 @@ class VoyagePage(BasePage):
         self.go_to_url(VOYAGE_PAGE)
         self.wait_element_loading(ELEMENT_SIDEBAR)
 
-    def click_enable_all_toggle(self):
+    def switch_on_enable_all_toggle(self):
         self.wait_element_in_dom(TOGGLE_ENABLE_ALL)
-        self.click_element_toggle_on(TOGGLE_ENABLE_ALL)
-
-    # def get_toggle_attributes(self):
-    #     print(self.get_element_attributes(TOGGLE_ENABLE_ALL))
-
-    # def fill_current_voyage(self):
-    #     self.click_element(BUTTON_EDIT)
-    #     self.send_text_to_element(INPUT_VOYAGE_DRAFT_NUMBER_PARAMETER, '1')
-    #     self.action.click(MENU_VOYAGE_DRAFT_DIRECTION_STAGE_PARAMETER).click(MENU_DIRECTION_STAGE_ELEMENTS).perform()
-    #     self.send_text_to_element(INPUT_VOYAGE_DRAFT_NAME_PARAMETER, '1')
-    #     self.click_save_button()
+        self.click_element_toggle_on_force(TOGGLE_ENABLE_ALL)
 
     def fill_current_voyage(self):
         self.click_element(BUTTON_EDIT)
-
-        self.click_element(INPUT_VOYAGE_DRAFT_NUMBER_PARAMETER)
-        self.driver.find_element(*INPUT_VOYAGE_DRAFT_NUMBER_PARAMETER).send_keys('1')
-
-        self.click_element(MENU_VOYAGE_DRAFT_DIRECTION_STAGE_PARAMETER)
-        self.click_element(MENU_DIRECTION_STAGE_ELEMENTS)
-
-        self.click_element(INPUT_VOYAGE_DRAFT_NAME_PARAMETER)
-        self.driver.find_element(*INPUT_VOYAGE_DRAFT_NAME_PARAMETER).send_keys('1')
-        self.click_save_button()
+        self.send_text_to_input_element(VOYAGE_DRAFT_VOYAGE_NUMBER_INPUT, '1')
+        self.choose_drop_menu_item(VOYAGE_DRAFT_DIRECTION_STAGE_DROPMENU, VOYAGE_DRAFT_DIRECTION_STAGE_DROPMENU_ITEM)
+        self.send_text_to_input_element(VOYAGE_DRAFT_VOYAGE_NAME_INPUT, '1')
+        self.click_element(BUTTON_SAVE)
+        self.click_element(BUTTON_VOYAGE_DRAFT_BACK)
 
     def create_voyage_event_report(self, element_event_report, supposed_text):
         self.click_element(element_event_report)
@@ -59,14 +50,9 @@ class VoyagePage(BasePage):
                 and self.get_elements_text_equality(TIMELINE_EVENT_DATE, TIMELINE_REPORT_DATE)
                 and self.get_elements_text_equality(TIMELINE_EVENT_TIME, TIMELINE_REPORT_TIME))
 
-    # def click_report(self, event_index):
-    #     required_event_locator = self.timeline_list[event_index][1]
-    #     required_report = self.format_locator_with_one_parameter(REPORT, required_event_locator)
-    #     self.click_element(required_report)
-
     def click_departure_report(self):
-        DEPARTURE_REPORT = ('xpath', '//div[text()="Departure report"]//ancestor::div[contains(@qa-id, "timeline-report")]')
-        self.click_element(DEPARTURE_REPORT)
+        departure_report = self.format_locator_with_one_parameter(TIMELINE_DEPARTURE_REPORT, 'Departure report')
+        self.click_element(departure_report)
 
     def voyage_report_equipment_assertion(self, equipment_list):
         REPORT_EQUIPMENT_LOCATOR = ('xpath', '//div[text()="{}{}"]')
@@ -76,3 +62,15 @@ class VoyagePage(BasePage):
             for number in range(1, number_of_equipment + 1):
                 equipment_locator = self.format_locator_with_two_parameters(REPORT_EQUIPMENT_LOCATOR, equipment_name, number)
                 assert self.driver.find_element(*equipment_locator).is_displayed()
+
+
+    def fill_all_mandatory_fields(self):
+        fill_dropdown_menu(self.driver)
+        fill_regular_fields(self.driver)
+        fill_position(self.driver)
+        fill_date_time(self.driver)
+        fill_consumption(self.driver)
+        # fill_consumption_time(self.driver)
+        time.sleep(3)
+        self.click_element(BUTTON_SEND)
+        # assert not self.driver.find_elements('xpath', '//*[contains(@class, "mandatory")]')
